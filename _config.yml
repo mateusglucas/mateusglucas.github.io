@@ -1,3 +1,17 @@
-theme: jekyll-theme-minimal
+# Site Settings
 title: Mateus' homepage
 description: Bookmark this to keep an eye on my project updates!
+url: "https://mateusglucas.github.io" # Replace with your GitHub username
+baseurl: "" # Leave empty if using username.github.io, otherwise use "/repository-name"
+
+# Theme Plugins & Setup
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+remote_theme: "mmistakes/minimal-mistakes@4.24.0" # Fetches the theme directly from GitHub
+
+# Minimal Mistakes Specific Setup
+locale: "en-US"
+skin: "default" # Options: air, aqua, contrast, dark, dirt, neon, mint, sunrise
+
