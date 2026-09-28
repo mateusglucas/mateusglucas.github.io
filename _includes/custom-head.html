@@ -1,0 +1,122 @@
+<style>
+  :root {
+    --text-normal: #111;
+    --background-primary: #fff;
+  }
+
+  .tikz-figure {
+    display: block;
+    margin: 1.5rem auto;
+    text-align: center;
+    overflow-x: auto;
+  }
+
+  .tikz-figure svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Keep display math on its own line even if Markdown left it in a <p>. */
+  mjx-container[jax="CHTML"][display="true"] {
+    display: block;
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .math-display {
+    display: block;
+    margin: 1em 0;
+  }
+
+  .callout {
+    margin: 1.25rem 0;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid #4a90d9;
+    background: #f3f8fc;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .callout-title {
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .callout-info {
+    border-left-color: #4a90d9;
+    background: #f3f8fc;
+  }
+
+  .callout-warning {
+    border-left-color: #c98a00;
+    background: #fff8e8;
+  }
+
+  .callout-tip {
+    border-left-color: #2f9e44;
+    background: #eefbf1;
+  }
+</style>
+
+<script>
+  window.MathJax = {
+    loader: {
+      load: ["[tex]/color", "[tex]/bbox", "[tex]/upgreek", "[tex]/ams"],
+    },
+    tex: {
+      packages: { "[+]": ["color", "ams", "amsfonts", "bbox", "upgreek"] },
+      // Notes use explicit \tag{n}; auto AMS tags cause "Multiple \tag".
+      tags: "none",
+      inlineMath: [
+        ["\\(", "\\)"],
+        ["$", "$"],
+      ],
+      displayMath: [
+        ["\\[", "\\]"],
+        ["$$", "$$"],
+      ],
+    },
+    options: {
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+    },
+    startup: {
+      ready: function () {
+        MathJax.startup.defaultReady();
+
+        // Obsidian allows CSS variables in \color{var(--name)}; resolve them
+        // at typeset time so notes do not need rewriting.
+        var inputJax = MathJax.startup.document.inputJax[0];
+        inputJax.preFilters.add(function (data) {
+          if (!data.math || typeof data.math.math !== "string") {
+            return;
+          }
+          data.math.math = data.math.math.replace(
+            /\\color\{var\((--[\w-]+)\)\}/g,
+            function (_match, name) {
+              var value = getComputedStyle(document.documentElement)
+                .getPropertyValue(name)
+                .trim();
+              return "\\color{" + (value || "#111") + "}";
+            }
+          );
+        });
+      },
+    },
+  };
+</script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/gh/artisticat1/obsidian-tikzjax@0.5.2/styles.css"
+>
+<script defer src="{{ '/assets/js/tikz-blocks.js' | relative_url }}"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/artisticat1/obsidian-tikzjax@0.5.2/tikzjax.js"
+></script>
