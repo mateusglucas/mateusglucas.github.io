@@ -23,6 +23,9 @@ module TikzRender
       abs_svg = File.join(site.source, rel_svg)
 
       ensure_svg!(source, abs_svg, hash, site)
+      # Some pdf2svg builds emit unitless width/height; browsers treat that as
+      # px, while "Npt" → CSS px via 96/72 (~33% larger). Normalize to pt.
+      normalize_svg_units!(abs_svg)
       register_static_svg!(site, hash)
 
       # Same as Obsidian TikZJax: no artificial scale — browser uses SVG
@@ -31,6 +34,14 @@ module TikzRender
       src = "#{base}/#{rel_svg}"
       %(<figure class="tikz-figure"><img src="#{src}" alt="TikZ diagram" loading="lazy"></figure>\n\n)
     end
+  end
+
+  def normalize_svg_units!(abs_svg)
+    return unless File.file?(abs_svg)
+
+    svg = File.read(abs_svg, encoding: "UTF-8")
+    normalized = svg.gsub(/\b(width|height)="([\d.]+)"/, '\1="\2pt"')
+    File.write(abs_svg, normalized) if normalized != svg
   end
 
   def register_static_svg!(site, hash)
