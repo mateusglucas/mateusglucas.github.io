@@ -4,7 +4,6 @@ title:  "Axiomas de Peano - Da necessidade do Princípio da Indução"
 date:   2025-04-03 18:24:34 -0300
 render_with_liquid: false
 ---
-
 Intuitivamente, todos nós sabemos o que são os números naturais e como contá-los. Talvez este seja um dos primeiros conceitos matemáticos que aprendemos. Na Matemática, esta intuição é formalizada por meio dos Axiomas de Peano.
 
 Aos que já estão habituados com o tema, um desses axiomas é o chamado Princípio da Indução. Apesar de ser um axioma muito útil para demonstrações, sua necessidade pode não ser muito clara à primeira vista. Além disso, este axioma é equivalente a um outro axioma, o Princípio da Boa Ordenação. 
@@ -24,7 +23,7 @@ Outra propriedade importante é a de que dois números naturais diferentes possu
 
 **P2.** $s:\mathbb{N}\to\mathbb{N}$ é *injetiva*.
 
-Pelos axiomas que definimos, garantimos, pelo menos, a existência do número $1$. Partindo de $1$, vamos aplicar a função $s$ sucessivamente. Como $1$ não é sucessor de nenhum número (axioma **P1**), então, $s(1)\neq 1$. Logo $s(1)$, o sucessor de $1$, é um número natural distinto de $1$, que representaremos (advinhem!) pelo símbolo $2$. 
+Pelos axiomas que definimos, garantimos, pelo menos, a existência do número $1$. Partindo de $1$, vamos aplicar a função $s$ sucessivamente. Como $1$ não é sucessor de nenhum número (axioma **P1**), então, $s(1)\neq 1$. Logo $s(1)$, o sucessor de $1$, é um número natural distinto de $1$, que representaremos (adivinhem!) pelo símbolo $2$. 
 
 E quanto a $s(2)$? Há garantia, pelos axiomas definidos até o momento, que ele será um número natural distinto de $1$ e $2$? A resposta é **sim**. Temos que $s(2)\neq 1$, pois $1$ não é o sucessor de nenhum outro número, e também que $s(2)\neq2$, pois, caso contrário, teríamos $s(2)=2=s(1)$, contrariando a injetividade de $s$. Representaremos $s(2)$ pelo símbolo (isto está começando a ficar repetitivo) $3$.
 
@@ -56,7 +55,7 @@ Não tão rápido... Vamos criar um diagrama do que temos até agora, em que as 
 \end{document}
 ```
 
-Pelo axioma **P1**, nenhuma flecha pode chegar em $1$. Pelo axioma **P2**, uma e somente uma flecha chega em todos os outros números naturais. Os axiomas produziram a nossa estrutura familiar de números naturais, mas há algo a mais que não estamos percebendo? Vamos desenhar mais um numero natural arbitrário, representado por $\alpha$.
+Pelo axioma **P1**, nenhuma flecha pode chegar em $1$. Pelo axioma **P2**, uma e somente uma flecha chega em todos os outros números naturais. Os axiomas produziram a nossa estrutura familiar de números naturais, mas há algo a mais que não estamos percebendo? Vamos desenhar mais um número natural arbitrário, representado por $\alpha$.
 
 ```tikz
 \tikzstyle{item} = [circle, text centered, draw=black]
@@ -167,7 +166,7 @@ Ou ainda um ramo que, a partir de $\alpha$, segue infinitamente em ambas as dire
 
 Não há nada nos dois axiomas que definimos que garanta ou impeça a existência desses números naturais "estranhos". Considerando os axiomas que definimos até agora, a existência dos números naturais "estranhos" é indecidível.
 
-Para resolver o problema, vamos forçar a barra e definirmos um axioma que simplesmente diz que o conjunto dos números naturais é somente o ramo gerado por $1$. Note que, para que um conjunto $X\subset\mathbb{N}$ contenha todos os elementos do ramo gerado por $1$, basta requerer que $1\in X$ e que, para qualquer elemento $n\in X$, tenhamos também $s(n)\in X$. Podemos agora enunciar o:
+Para resolver o problema, vamos forçar a barra e definir um axioma que simplesmente diz que o conjunto dos números naturais é somente o ramo gerado por $1$. Note que, para que um conjunto $X\subset\mathbb{N}$ contenha todos os elementos do ramo gerado por $1$, basta requerer que $1\in X$ e que, para qualquer elemento $n\in X$, tenhamos também $s(n)\in X$. Podemos agora enunciar o:
 
 **P3a.** (Princípio da Indução) Se $X\subset\mathbb{N}$ é um conjunto tal que:
 - $1\in X$
@@ -178,7 +177,7 @@ Pode parecer que isso não elimina completamente o problema, pois, por exemplo, 
 
 Vejamos como provar, por exemplo, que não existe um número natural $\alpha$ tal que $s(\alpha)=\alpha$ (o primeiro caso que desenhamos). Seja $X=\{ n\in\mathbb{N}~|~s(n)\neq n \}$. Sabemos que $1\in X$, pois já concluímos anteriormente que $s(1)=2\neq1$. Suponha que $n\in X$. Então $s(n)\neq n$ e, pela injetividade de $s$, segue que $s(s(n))\neq s(n)$. Logo $s(n)\in X$. Portanto, pelo Princípio da Indução, $X=\mathbb{N}$, ou seja, $s(n)\neq n$ para todo número natural, logo não pode existir $\alpha$ natural tal que $s(\alpha)=\alpha$. 
 
-Com o Princípio da Indução, eliminamos todos os possíveis números naturais "estranhos". Mas há outras formas de fazer isso. Compare os ramos "estranhos" com o ramo gerado por $1$. Percorra os ramos, a partir de qualquer elemento, no sentido contrário das flechas. Você irá notar que, enquanto que no ramo gerado por $1$ este processo terá fim, chegando inevitavelmente no número $1$, isto não ocorre nos ramos "estranhos".  Intuitivamente, acabamos de observar que os ramos "estranhos" não possuem um *menor elemento*.
+Com o Princípio da Indução, eliminamos todos os possíveis números naturais "estranhos". Mas há outras formas de fazer isso. Compare os ramos "estranhos" com o ramo gerado por $1$. Percorra os ramos, a partir de qualquer elemento, no sentido contrário das flechas. Você irá notar que, enquanto no ramo gerado por $1$ este processo terá fim, chegando inevitavelmente no número $1$, isto não ocorre nos ramos "estranhos".  Intuitivamente, acabamos de observar que os ramos "estranhos" não possuem um *menor elemento*.
 
 Mas, antes disso, precisamos definir o que é um *menor elemento*. Para nos auxiliar nesta tarefa, vamos primeiramente definir, de forma recursiva, a operação de adição $+:\mathbb{N}\times\mathbb{N}\to\mathbb{N}$:
 
@@ -208,11 +207,11 @@ $$s(X)=\{ s(n)\in\mathbb{N}~|~n\in X \}$$ Ou seja, $s(X)$ é o conjunto que se o
 
 Vamos à terceira alternativa.
 
-Note que, aplicando $s$ a todos elementos de um ramo "estranho", obtemos novamente todos os elementos do ramo, i.e., a imagem por $s$ de um ramo "estranho" é o próprio ramo "estranho". Já para o ramo gerado por $1$ ou para qualquer subconjunto deste ramo, ao aplicarmos $s$ em todos os elementos, ao menos o menor elemento do conjunto ficará de fora da imagem. Sendo assim, podemos eliminar os ramos "estranhos" exigindo que:
+Note que, aplicando $s$ a todos os elementos de um ramo "estranho", obtemos novamente todos os elementos do ramo, i.e., a imagem por $s$ de um ramo "estranho" é o próprio ramo "estranho". Já para o ramo gerado por $1$ ou para qualquer subconjunto deste ramo, ao aplicarmos $s$ em todos os elementos, ao menos o menor elemento do conjunto ficará de fora da imagem. Sendo assim, podemos eliminar os ramos "estranhos" exigindo que:
 
 **P3c.** Para todo $X\subset\mathbb{N}$ não vazio, $X-s(X)\neq \emptyset$.
 
-Intuitivamente, os axiomas **P3a**, **P3b** e **P3c** exprimem a mesma coisa de formas diferentes, mas intuições não são suficientes. Vamos provar que de, fato, estes três axiomas são equivalentes.
+Intuitivamente, os axiomas **P3a**, **P3b** e **P3c** exprimem a mesma coisa de formas diferentes, mas intuições não são suficientes. Vamos provar que, de fato, estes três axiomas são equivalentes.
 
 Antes disso, mais algumas definições:
 $$I_{n}=\{m\in\mathbb{N}~|~m\leq n \}$$
@@ -242,13 +241,13 @@ Vamos às demonstrações.
 
 Seja $X\subset\mathbb{N}$ um conjunto sem menor elemento e seja $Y=\{ n\in\mathbb{N}~|~I_n\subset\complement X \}$. Como $X$ não possui menor elemento, então $1\not\in X$. Mas $1\not\in X\implies 1\in\complement X\implies I_1=\{ 1 \}\subset\complement X\implies 1\in Y$.
 
-Dado um $n\in\mathbb{N}$, suponhamos que $n\in Y$. Então $I_n\subset\complement X$. Além disso, $I_n\subset\complement X\implies s(n)\not\in X$, pois, caso contrário, $s(n)$ seria o menor elemento de $X$. Portanto $I_n\subset\complement X$ e $s(n)\in\complement X$. Logo $I_{s(n)}\subset X$ e, então, $s(n)\in Y$. Sendo assim, $n\in Y\implies s(n)\in Y$.
+Dado um $n\in\mathbb{N}$, suponhamos que $n\in Y$. Então $I_n\subset\complement X$. Além disso, $I_n\subset\complement X\implies s(n)\not\in X$, pois, caso contrário, $s(n)$ seria o menor elemento de $X$. Portanto $I_n\subset\complement X$ e $s(n)\in\complement X$. Logo $I_{s(n)}\subset\complement X$ e, então, $s(n)\in Y$. Sendo assim, $n\in Y\implies s(n)\in Y$.
 
 Então, por **P3a**, segue que $Y=\mathbb{N}$, logo $I_n\subset\complement X$ para todo $n\in\mathbb{N}$. Em particular, $n\in\complement X$ para todo $n\in\mathbb{N}$, ou seja, $n\not\in X$ para todo $n\in\mathbb{N}$. Logo $X=\emptyset$.
 
 **P3b$\implies$P3c:** 
 
-Seja $X\subset\mathbb{N}$ não vazio e seja $n$ o menor elemento de $X$. Suponhamos que $X-s(X)=\emptyset$. Então todo elemento de $X$ também pertence a $s(X)$. Em particular, $n\in s(X)$, logo existe $m\in X$ tal que $s(m)=n$. Mas isso implica que $m<n$. Absurdo, pois $n$ é o menor elemento de $X$. Portanto $X-s(X)=\emptyset$.
+Seja $X\subset\mathbb{N}$ não vazio e seja $n$ o menor elemento de $X$. Suponhamos que $X-s(X)=\emptyset$. Então todo elemento de $X$ também pertence a $s(X)$. Em particular, $n\in s(X)$, logo existe $m\in X$ tal que $s(m)=n$. Mas isso implica que $m<n$. Absurdo, pois $n$ é o menor elemento de $X$. Portanto $X-s(X)\neq\emptyset$.
 
 **P3c$\implies$P3a:** 
 

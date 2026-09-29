@@ -4,10 +4,9 @@ title:  "Como os telescópios funcionam"
 date:   2025-04-13 01:02:11 -0300
 render_with_liquid: false
 ---
+Em algum lugar muito distante, uma pequena parcela da luz emitida ou refletida por algum objeto celeste inicia a sua viagem com destino à Terra. Após percorrer distâncias inimagináveis, uma parcela dessa luz entra pela abertura de um telescópio, é refletida por espelhos e/ou desviada por lentes na medida certa para formar uma imagem ampliada do objeto, que pode então ser visualizada por nós ao colocarmos o olho na ocular do telescópio.
 
-Em algum lugar muito distante, uma pequena parcela da luz emitida ou refletida por algum objeto celeste inicia a sua viagem com destino à Terra. Após percorrer distâncias inimagináveis, uma parcela dessa luz entra pela abertura de um telescópio, é refletida por espelhos e/ou desviada por lentes na medida certa para forma uma imagem ampliada do objeto, que pode então ser visualizada por nós ao colocarmos o olho na ocular do telescópio.
-
-Este artigo tem como objetivo apresentar os princípios de funcionamento dos telescópio e a dedução de algumas de suas relações básicas. Vamos considerar uma configuração simples, de um telescópio formado por duas lentes: a objetiva, que focaliza a luz, e a ocular, que realiza a ampliação da imagem.
+Este artigo tem como objetivo apresentar os princípios de funcionamento dos telescópios e a dedução de algumas de suas relações básicas. Vamos considerar uma configuração simples, de um telescópio formado por duas lentes: a objetiva, que focaliza a luz, e a ocular, que realiza a ampliação da imagem.
 
 # Querida, encolhi as crianças
 
@@ -103,7 +102,7 @@ Vamos começar analisando o efeito da objetiva. A luz do objeto distante (em azu
 $$
 \begin{align} \\
 \frac{h_{1}}{d_{1}}&=\frac{h_{2}}{d_{2}}&\implies&& \frac{h_{1}}{h_{2}}&=\frac{d_{1}}{d_{2}}\tag{1}\\ \\
-\frac{h_{1}}{f_{ob}}&=\frac{h_{2}}{d_{2}-f_{ob}}&\implies&&\frac{h_{1}}{h_{2}}&=\frac{f_{ob}}{d_{2}-f_{oc}}\tag{2}\\ \\
+\frac{h_{1}}{f_{ob}}&=\frac{h_{2}}{d_{2}-f_{ob}}&\implies&&\frac{h_{1}}{h_{2}}&=\frac{f_{ob}}{d_{2}-f_{ob}}\tag{2}\\ \\
 %\frac{h_{1}}{d_{1}-f_{ob}}&=\frac{h_{2}}{f_{ob}}&\implies&& \frac{h_{1}}{h_{2}}&=\frac{d_{1}-f_{ob}}{f_{ob}}
 \end{align}
 $$
@@ -134,7 +133,7 @@ Ou seja, a imagem de Saturno é formada aproximadamente no foco da objetiva, com
 
 Precisamos formar uma imagem ampliada a partir da imagem microscópica presente no foco da objetiva. Além disso, é desejável que esta imagem ampliada esteja distante, para tornar a observação mais confortável. Conseguimos fazer isso com uma segunda lente convergente, chamada de *ocular*. 
 
-A ocular é posicionada de forma que a imagem microscópica fique a uma distância da ocular menor do que a sua distância focal. Com isso, é formada uma imagem virtual ampliada e mais distante. No diagrama abaixo, é utilizada a notação $d_{2}^\prime$ para representar a distância entre a imagem microscópica e a objetiva, para diferenciar de $d_{2}$, que é a distância entre esta mesma imagem e a ocular.
+A ocular é posicionada de forma que a imagem microscópica fique a uma distância da ocular menor do que a sua distância focal. Com isso, é formada uma imagem virtual ampliada e mais distante. No diagrama abaixo, é utilizada a notação $d_{2}^\prime$ para representar a distância entre a imagem microscópica e a ocular, para diferenciar de $d_{2}$, que é a distância entre esta mesma imagem e a objetiva.
 ```tikz
 \usetikzlibrary{calc}
 \usetikzlibrary{intersections}
@@ -239,7 +238,7 @@ Substituindo $(7)$ em $(5)$:
 $$
 \frac{h_{2}}{h_{3}}=\frac{d_{2}^\prime}{d_{3}}\implies h_{3}=d_{3}\cdot \frac{h_{2}}{d_{2}^\prime}=\frac{1}{\frac{1}{d_{2}^\prime}-\frac{1}{f_{oc}}}\cdot \frac{h_{2}}{d_{2}^\prime}\implies\boxed{h_{3}=\frac{h_{2}}{1-\frac{d_{2}^\prime}{f_{oc}}}}\tag{8}
 $$
-Agora vamos fazer algumas aproximações razoáveis a fim de obter a ampliação total do nosso telescópio. Primeiramente, os objetos que observamos estão, pelo menos, a centenas de milhares de quilômetros de distância (a Lua, por exemplo, está a uma distância média de $384\ 400~ \mathrm{km}$ da Terra). Portanto, é razoável considerar $d_{1}\gg f_{ob}$. Além disso, desejamos que a imagem virtual formada pela objetiva esteja distante, para facilitar a observação. De maneira talvez um tanto poética, queremos que a imagem se forme no *infinito*. Na prática, é isto que buscamos quando movimentamos a ocular até obter uma imagem nítida com o olho relaxado. Logo podemos supor $d_3\gg f_{oc}$.
+Agora vamos fazer algumas aproximações razoáveis a fim de obter a ampliação total do nosso telescópio. Primeiramente, os objetos que observamos estão, pelo menos, a centenas de milhares de quilômetros de distância (a Lua, por exemplo, está a uma distância média de $384\ 400~ \mathrm{km}$ da Terra). Portanto, é razoável considerar $d_{1}\gg f_{ob}$. Além disso, desejamos que a imagem virtual formada pela ocular esteja distante, para facilitar a observação. De maneira talvez um tanto poética, queremos que a imagem se forme no *infinito*. Na prática, é isto que buscamos quando movimentamos a ocular até obter uma imagem nítida com o olho relaxado. Logo podemos supor $d_3\gg f_{oc}$.
 
 Vamos às repercussões dessas aproximações. Pela equação $(3)$, considerando $d_{1}\gg f_{ob}$:
 $$
@@ -251,7 +250,7 @@ d_{3}=\frac{1}{\frac{1}{d_{2}^\prime}-\frac{1}{f_{oc}}}\implies \frac{1}{d_{2}^\
 $$
 Em resumo, o foco da objetiva coincide com o foco da ocular e a imagem formada pela objetiva está localizada neste ponto comum, em ambos os focos das lentes.
 
-Agora, a etapa final para obtermos a ampliação, ou magnificação, de nosso telescópio, isto é, o quão maior nos parece a imagem observada por meio do telescópio em comparação à observação a olho nu.
+Agora, vamos para a etapa final para obtermos a ampliação, ou magnificação, de nosso telescópio, isto é, o quão maior nos parece a imagem observada por meio do telescópio em comparação à observação a olho nu.
 
 A imagem de um objeto projetada em nossa retina tem um tamanho proporcional ao ângulo visual do objeto. Sendo assim, para obtermos a ampliação do telescópio, devemos comparar o ângulo visual $\alpha_{eye}$ ao observar o objeto a olho nu com o ângulo visual $\alpha_{tele}$ ao observar o objeto utilizando o telescópio. Considerando ângulos visuais pequenos, podemos usar a aproximação $\tan\alpha\approx\alpha$. 
 $$
@@ -267,7 +266,7 @@ M=\frac{\alpha_{tele}}{\alpha_{eye}}\approx\frac{\tan(\alpha_{tele})}{\tan(\alph
 $$
 Por exemplo, considerando um telescópio com distância focal de $1000~\mathrm{mm}$ e utilizando uma ocular de $10~\mathrm{mm}$, será obtida uma ampliação de $1000/10=100$ vezes. 
 
-Então basta construirmos telescópios com distâncias focais arbitrariamente grandes e utilizarmos oculares com distâncias focais arbitrariamente pequenas para conseguirmos ampliações tão grandes quanto desejarmos, certo? Infelizmente, não existe almoço grátis. A turbulência atmosférica, a qualidade das lentes e a própria natureza ondulatória da luz (neste caso, mais especificamente, o fenômeno de difração) são fatores que limitam a resolução angular máxima de um telescópio, consequentemente degradando a resolução da imagem obtida conforme são utilizadas ampliações mais elevadas.
+Então basta construirmos telescópios com distâncias focais arbitrariamente grandes e utilizarmos oculares com distâncias focais arbitrariamente pequenas para conseguirmos ampliações tão grandes quanto desejarmos, certo? Infelizmente, não existe almoço grátis. A turbulência atmosférica, a qualidade das lentes e a própria natureza ondulatória da luz (neste caso, mais especificamente, o fenômeno de difração) são fatores que limitam a resolução angular máxima de um telescópio, consequentemente degradando a imagem obtida conforme são utilizadas ampliações mais elevadas.
 # Rápido e devagar
 
 Muitas vezes os telescópios não são utilizados para observações diretas, mas sim para *astrofotografia*. Neste caso, uma câmera é colocada na posição da ocular. A câmera é apenas um sensor, sem lentes, que converte a imagem projetada nele em sinais elétricos, produzindo a imagem digital. Nesta situação, a lente é o próprio telescópio (mais especificamente, a objetiva), que focaliza a imagem no sensor.
@@ -280,7 +279,7 @@ Que características construtivas do telescópio determinam se ele é rápido ou
 
 No Sistema Internacional de Unidades, o *fluxo luminoso*, uma medida da potência percebida de luz visível emitida por uma fonte, é medido em *lúmens* (lm). A grosso modo, o fluxo luminoso está relacionado à *quantidade* de luz visível (é como uma medida da quantidade de raios de luz). Já o fluxo luminoso por unidade de área, ou *iluminância*, é medido em *lux* (lx), que é equivalente a um lúmen por metro quadrado. Portanto, a grosso modo, a iluminância é uma medida da *concentração* de luz visível (é como uma medida da quantidade de raios de luz por unidade de área).
 
-A luz emitida pelos objetos que observamos pelo telescópio chega a nós sob a forma de raios praticamente paralelos e distribuídos homogeneamente, devido à grande distância, produzindo, portanto, uma iluminância (concentração de raios de luz) constante. Seja $E_{V}$ a iluminância referente ao objeto observado (o subscrito $V$ reforça que considera-se apenas a luz *visível*) . O fluxo luminoso (quantidade de luz) captado pelo telescópio depende da área da objetiva, sendo dado por:
+A luz emitida pelos objetos que observamos pelo telescópio chega a nós sob a forma de raios praticamente paralelos e distribuídos homogeneamente, devido à grande distância, produzindo, portanto, uma iluminância (concentração de raios de luz) constante. Seja $E_{V}$ a iluminância referente ao objeto observado (o subscrito $V$ reforça que considera-se apenas a luz *visível*). O fluxo luminoso (quantidade de luz) captado pelo telescópio depende da área da objetiva, sendo dado por:
 $$
 \Phi_{V}=E_{V} \cdot \frac{\pi D^{2}}{4} 
 $$
@@ -325,7 +324,7 @@ E_{V}=2{,}54\cdot 10^{-6}\cdot 10^{-m_{V}/2{,}5}=2{,}54\cdot 10^{-(0{,}4\cdot m_
 $$
 As magnitudes aparentes geralmente são informadas considerando uma observação fora da atmosfera terrestre. É necessário compensar o valor de magnitude, considerando a *extinção* da luz (absorção e dispersão) que ocorre devido à presença da atmosfera. Antes de prosseguir, vamos a algumas definições.
 
-O *zênite* é o ponto no céu diretamente *acima* de uma localidade em particular. É o ponto *mais alto* do céu. O *ângulo de zênite* de um objeto celeste é o ângulo entre o objeto e o zênite. Uma *massa de ar* é uma medida da quantidade de ar ao longo da linha de visão ao observar um objeto celeste a partir de um ponto dentro da atmosfera da Terra. Geralmente esta medida é dada relativamente à massa de ar do zênite, i.e., considera-se que a luz de um objeto celeste localizado no zênite percorre $1$ massa de ar até chegar a um observador no nível do mar. Evidentemente, a quantidade de massas de ar varia de acordo com a altitude do local observado, podendo ser, inclusive, menor do que $1$ em altitudes mais elevadas.
+O *zênite* é o ponto no céu diretamente *acima* de uma localidade em particular. É o ponto *mais alto* do céu. O *ângulo de zênite* de um objeto celeste é o ângulo entre o objeto e o zênite. Uma *massa de ar* é uma medida da quantidade de ar ao longo da linha de visão ao observar um objeto celeste a partir de um ponto dentro da atmosfera da Terra. Geralmente esta medida é dada relativamente à massa de ar do zênite, i.e., considera-se que a luz de um objeto celeste localizado no zênite percorre $1$ massa de ar até chegar a um observador no nível do mar. Evidentemente, a quantidade de massas de ar varia de acordo com a altitude do local de observação.
 
 Temos que $1$ massa de ar limpo transmite aproximadamente $82\%$ da luz visível ([Fonte](https://stjarnhimlen.se/comp/radfaq.html#7)). Isso corresponde a uma variação de magnitude de $-2{,}5\log_{10}(0{,}82)\approx 0{,}2$. Portanto a magnitude aparente dentro da atmosfera terrestre, considerando uma atmosfera limpa e um observador ao nível do mar, é dada por:
 $$

@@ -4,10 +4,9 @@ title:  "Impermanent loss"
 date:   2026-02-07 23:48:17 -0300
 render_with_liquid: false
 ---
-
 A compra e venda de ativos financeiros (moedas, criptomoedas, ações, etc.) geralmente funciona da seguinte forma: em uma plataforma de negociação, gerenciada por uma Exchange, há um livro de ordens, contendo todas as ordens em aberto de compra e venda. Caso você queira comprar um ativo, pode "casar" com alguma ordem de venda em aberto, realizando a transação, ou abrir uma nova ordem de compra no livro de ordens e aguardar que ela seja "casada" por algum vendedor interessado. O mesmo ocorre caso você queira vender.
 
-Note que tudo ocorre centralizado, na Exchange que gerencia o livro de ordens, e se não houverem compradores nem vendedores interessados com ordens em aberto, não é possível realizar transações. A liquidez do mercado, neste caso, depende da existência de ordens em aberto no livro de ordens.
+Note que tudo ocorre centralizado, na Exchange que gerencia o livro de ordens, e se não houver compradores nem vendedores interessados com ordens em aberto, não é possível realizar transações. A liquidez do mercado, neste caso, depende da existência de ordens em aberto no livro de ordens.
 
 Com o advento das criptomoedas, com foco na descentralização financeira (DeFi), uma nova filosofia surgiu com os *Automatic Market Makers* (AMM), um tipo de Exchange descentralizada (DEX). Ao invés de depender de ordens de compradores e vendedores, AMMs se baseiam em *pools* de liquidez e em um algoritmo claro para realizar as transações de compra e venda.
 
@@ -53,7 +52,7 @@ Além do *swap*, é possível prover ou retirar liquidez do *pool*. Neste caso, 
 $$
 \frac{m_{A}}{m_{B}}=\frac{n_{A}}{n_{B}}\tag{1}
 $$
-Em troca, o usário recebe uma quantidade $m_{LT}$ de ***tokens* de liquidez**, dada por:
+Em troca, o usuário recebe uma quantidade $m_{LT}$ de ***tokens* de liquidez**, dada por:
 $$
 m_{LT} = n_{LT}\cdot \frac{m_{A}}{n_{A}}=n_{LT}\cdot \frac{m_{B}}{n_{B}}
 $$
@@ -102,11 +101,11 @@ Portanto:
 $$
 \frac{{n_{LT}}^2}{k}=\frac{{n_{LT}^\prime}^2}{k^\prime}=K
 $$
-Sendo assim, a constante $k$ do *pool* e a o quadrado da quantidade total $n_{LT}$ de *tokens* de liquidez estão intimamente relacionadas por uma constante de proporção $K$. Esta constante é definida no momento da criação do *pool*. É natural que queiramos fazer $K=1$. Para isso, no momento da criação do *pool*, basta gerarmos uma quantidade de *tokens* de liquidez igual a $n_{LT_{0}} = \sqrt{n_{A_{0}}\cdot n_{B_{0}}}=\sqrt{k_{0}}$, em que $n_{A_0}$ e $n_{B_0}$ são as quantidades de *tokens* A e B depositadas para a criação do *pool*. Sendo assim, teremos sempre $n_{LT}=\sqrt{ k }$.
+Sendo assim, a constante $k$ do *pool* e o quadrado da quantidade total $n_{LT}$ de *tokens* de liquidez estão intimamente relacionadas por uma constante de proporção $K$. Esta constante é definida no momento da criação do *pool*. É natural que queiramos fazer $K=1$. Para isso, no momento da criação do *pool*, basta gerarmos uma quantidade de *tokens* de liquidez igual a $n_{LT_{0}} = \sqrt{n_{A_{0}}\cdot n_{B_{0}}}=\sqrt{k_{0}}$, em que $n_{A_0}$ e $n_{B_0}$ são as quantidades de *tokens* A e B depositadas para a criação do *pool*. Sendo assim, teremos sempre $n_{LT}=\sqrt{ k }$.
 
 Ao fornecer liquidez ao *pool*, o usuário recebe uma parcela das taxas de transação cobradas nos *swaps*, de acordo com o tamanho da sua participação no *pool*. Então, em um primeiro momento, fornecer liquidez ao *pool* parece muito mais vantajoso do que realizar *buy-and-hold* nos tokens A e B. Entretanto, a variação relativa de preço entre os tokens A e B causa uma **perda impermanente** (*impermanent loss*) em relação ao *buy-and-hold*, consolidada caso o usuário retire liquidez do *pool*. Vejamos como isso ocorre.
 
-Primeiramente, note que em um mercado eficiente, o *pool* sempre armazena exatamente metade de seu valor em cada um dos *tokens*. Caso exista um desequilíbrio, a arbitragem fará com que o equilíbrio se restabeleça. Portanto, sendo $p_A$ e $p_B$ os preços dos *tokens* A e Bem relação a alguma moeda fiduciária de referência, temos:
+Primeiramente, note que em um mercado eficiente, o *pool* sempre armazena exatamente metade de seu valor em cada um dos *tokens*. Caso exista um desequilíbrio, a arbitragem fará com que o equilíbrio se restabeleça. Portanto, sendo $p_A$ e $p_B$ os preços dos *tokens* A e B em relação a alguma moeda fiduciária de referência, temos:
 $$
 n_{A}\cdot p_{A}=n_{B}\cdot p_{B}\tag{2}\implies \frac{p_{A}}{p_{B}}=\frac{n_{B}}{n_{A}}
 $$
@@ -119,13 +118,13 @@ p_{BA}=\frac{p_{B}}{p_{A}}=\frac{n_{A}}{n_{B}}
 $$
 Note que $p_{AB}$ representa o preço do *token* A cotado em *token* B. Se as relações parecerem invertidas para você, veja que $p_{AB}$ indica quantos *tokens* B são necessários para comprar um *token* A.
 
-Vamos denotar com um índice zero as grandezas no momento em que o usuário provê liquidez ao *pool*. Grandezas sem índice correspondem ao momento em que o usuário retira liquidez do *pool* ou a grandezas que se mantêm inalteradas em ambos os momentos. Para cotações, vamos escolher como referência o *token* A.
+Vamos denotar com um índice zero as grandezas no momento em que o usuário provê liquidez ao *pool*. Grandezas sem índice correspondem ao momento em que o usuário retira liquidez do *pool* ou a grandezas que se mantêm inalteradas em ambos os momentos.
 
 Como dito anteriormente, ao prover liquidez ao *pool*, o usuário recebe uma quantidade de *tokens* de liquidez dada por $m_{LT} = n_{LT_{0}}\cdot \frac{m_{A_{0}}}{n_{A_{0}}}=n_{LT_{0}}\cdot \frac{m_{B_{0}}}{n_{B_{0}}}$.  O valor total inicial investido pelo usuário é dado por:
 $$
 M_{0}=m_{A_{0}}\cdot p_{A_{0}} + m_{B_{0}}\cdot p_{B_{0}}
 $$
-Em algum momento do futuro, caso o usuário retire toda a liquidez provida anteriormente, ele receberá quantidades de *tokens* A dada por:
+Em algum momento do futuro, caso o usuário retire toda a liquidez provida anteriormente, ele receberá uma quantidade de *tokens* A dada por:
 $$
 m_{A} = \frac{m_{LT}}{n_{LT}}\cdot n_{A}=\frac{n_{LT_{0}}\cdot \frac{m_{A_{0}}}{n_{A_{0}}}}{n_{LT}}\cdot n_{A}=m_{A_{0}}\cdot \frac{n_{LT_{0}}}{n_{LT}}\cdot \frac{n_{A}}{n_{A_{0}}} \\
 $$
@@ -141,7 +140,7 @@ O valor recuperado no futuro, no cenário em que o usuário forneceu liquidez ao
 $$
 M_{LP}=m_{A}\cdot p_{A}+m_{B}\cdot p_{B}=m_{A_{0}}\cdot p_{A}\cdot\sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }+m_{B_{0}}\cdot p_{B}\cdot \sqrt{ \frac{p_{BA_{0}}}{p_{BA}} }
 $$
-Caso o usuário tivesse feito *buy-and-hold*, a quantidade de *tokens* A e B se manteria inalterada. Neste caso, o valor do recuperado no futuro seria:
+Caso o usuário tivesse feito *buy-and-hold*, a quantidade de *tokens* A e B se manteria inalterada. Neste caso, o valor recuperado no futuro seria:
 $$
 M_{BH}=m_{A_{0}}\cdot p_{A}+ m_{B_{0}}\cdot p_{B}
 $$
@@ -149,7 +148,7 @@ A **perda impermanente** (*impermanent loss*) L representa a perda do cenário d
 $$
 L=\frac{M_{LP}}{M_{BH}}-1
 $$
-Primeiro vamos calcular a razão $\frac{M_{LP}}{M_{BH}}$. Notemos que esta razão pode ser decomposta em duas parcelas, em que uma pode ser obtidas a partir da outra ao trocar A por B. Estas parcelas serão representadas como $\gamma_{AB}$ e $\gamma_{BA}$, conforme indicado abaixo:
+Primeiro vamos calcular a razão $\frac{M_{LP}}{M_{BH}}$. Notemos que esta razão pode ser decomposta em duas parcelas, em que uma pode ser obtida a partir da outra ao trocar A por B. Estas parcelas serão representadas como $\gamma_{AB}$ e $\gamma_{BA}$, conforme indicado abaixo:
 $$
 \begin{align}
 \frac{M_{LP}}{M_{BH}}&=\frac{m_{A_{0}}\cdot p_{A}\cdot\sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }+m_{B_{0}}\cdot p_{B}\cdot \sqrt{ \frac{p_{BA_{0}}}{p_{BA}} }}{m_{A_{0}}\cdot p_{A}+ m_{B_{0}}\cdot p_{B}} \\ \\
@@ -158,7 +157,7 @@ $$
 $$
 Desenvolvendo $\gamma_{AB}$:
 $$
-\gamma_{AB}=\frac{m_{A_{0}}\cdot p_{A}\cdot \sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }}{m_{A_{0}}\cdot p_{A}+m_{B_{0}}\cdot p_{B}}=\frac{1}{1+\frac{m_{B_{0}}\cdot p_{B}}{m_{A_{0}\cdot p_{A}}}}\cdot \sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }
+\gamma_{AB}=\frac{m_{A_{0}}\cdot p_{A}\cdot \sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }}{m_{A_{0}}\cdot p_{A}+m_{B_{0}}\cdot p_{B}}=\frac{1}{1+\frac{m_{B_{0}}\cdot p_{B}}{m_{A_{0}}\cdot p_{A}}}\cdot \sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }
 $$Aplicando $(1)$, $(2)$ e $(3)$:
 $$
 \gamma_{AB}=\frac{1}{1+\frac{p_{AB_{0}}}{p_{AB}}}\cdot \sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }=\frac{1}{\sqrt{ \frac{p_{AB}}{p_{AB_{0}}} }+\sqrt{ \frac{p_{AB_{0}}}{p_{AB}} }}=\frac{1}{\sqrt{ \frac{p_{AB}}{p_{AB_{0}}} }+\sqrt{ \frac{p_{BA}}{p_{BA_{0}}} }}
