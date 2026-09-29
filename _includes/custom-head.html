@@ -5,15 +5,20 @@
   }
 
   .tikz-figure {
-    display: block;
-    margin: 1.5rem auto;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1.5rem 0;
     overflow-x: auto;
   }
 
+  .tikz-figure img,
   .tikz-figure svg {
+    display: block;
     max-width: 100%;
     height: auto;
+    margin: 0 auto;
   }
 
   /* Keep display math on its own line even if Markdown left it in a <p>. */
@@ -108,15 +113,4 @@
   id="MathJax-script"
   async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-></script>
-
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.jsdelivr.net/gh/artisticat1/obsidian-tikzjax@0.5.2/styles.css"
->
-<script defer src="{{ '/assets/js/tikz-blocks.js' | relative_url }}"></script>
-<script
-  defer
-  src="https://cdn.jsdelivr.net/gh/artisticat1/obsidian-tikzjax@0.5.2/tikzjax.js"
 ></script>
