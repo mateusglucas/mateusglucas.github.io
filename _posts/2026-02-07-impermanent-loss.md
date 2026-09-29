@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Impermanent loss"
-date:   2026-09-05 18:17:00 -0300
+date:   2026-02-07 23:48:17 -0300
 render_with_liquid: false
 ---
 
@@ -119,7 +119,7 @@ p_{BA}=\frac{p_{B}}{p_{A}}=\frac{n_{A}}{n_{B}}
 $$
 Note que $p_{AB}$ representa o preço do *token* A cotado em *token* B. Se as relações parecerem invertidas para você, veja que $p_{AB}$ indica quantos *tokens* B são necessários para comprar um *token* A.
 
-Vamos denotar com um índice zero as grandezas no momento em que o usuário provê liquidez ao *pool*. Grandezas sem índice correspondem ao momento em que o usuário retira liquidez do *pool* ou a grandezas que se mantêm inalteradas em ambos os momentos. Para cotações, vamos escolher como referência o *token* A, entretanto 
+Vamos denotar com um índice zero as grandezas no momento em que o usuário provê liquidez ao *pool*. Grandezas sem índice correspondem ao momento em que o usuário retira liquidez do *pool* ou a grandezas que se mantêm inalteradas em ambos os momentos. Para cotações, vamos escolher como referência o *token* A.
 
 Como dito anteriormente, ao prover liquidez ao *pool*, o usuário recebe uma quantidade de *tokens* de liquidez dada por $m_{LT} = n_{LT_{0}}\cdot \frac{m_{A_{0}}}{n_{A_{0}}}=n_{LT_{0}}\cdot \frac{m_{B_{0}}}{n_{B_{0}}}$.  O valor total inicial investido pelo usuário é dado por:
 $$

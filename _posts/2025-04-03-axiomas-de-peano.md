@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Axiomas de Peano - Da necessidade do Princípio da Indução"
-date:   2025-04-13 01:06:21 -0300
+date:   2025-04-03 18:24:34 -0300
 render_with_liquid: false
 ---
 
