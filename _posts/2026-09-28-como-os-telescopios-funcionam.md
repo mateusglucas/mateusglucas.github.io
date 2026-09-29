@@ -5,18 +5,6 @@ date:   2026-09-28 18:01:00 -0300
 render_with_liquid: false
 ---
 
-# TODO
-
-- Objetiva e ocular
-- Revisão de lentes
-- ~~Amplificação dada por f_obj/f_oc~~
-- ~~Astrofotografia: fast vs slow~~ 
-- Exit pupil
-- Barlow
-* botar alguma imagem para ilustrar a questão de usar tangentes para calcular a ampliação dos objetos
-* dar um exemplo do tempo necessário de exposição para determinado objeto, falar de lux-segundo
-
-
 Em algum lugar muito distante, uma pequena parcela da luz emitida ou refletida por algum objeto celeste inicia a sua viagem com destino à Terra. Após percorrer distâncias inimagináveis, uma parcela dessa luz entra pela abertura de um telescópio, é refletida por espelhos e/ou desviada por lentes na medida certa para forma uma imagem ampliada do objeto, que pode então ser visualizada por nós ao colocarmos o olho na ocular do telescópio.
 
 Este artigo tem como objetivo apresentar os princípios de funcionamento dos telescópio e a dedução de algumas de suas relações básicas. Vamos considerar uma configuração simples, de um telescópio formado por duas lentes: a objetiva, que focaliza a luz, e a ocular, que realiza a ampliação da imagem.
