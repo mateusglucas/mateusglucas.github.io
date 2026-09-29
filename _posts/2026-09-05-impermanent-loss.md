@@ -2,7 +2,6 @@
 layout: post
 title:  "Impermanent loss"
 date:   2026-09-05 18:17:00 -0300
-categories: jekyll update
 render_with_liquid: false
 ---
 

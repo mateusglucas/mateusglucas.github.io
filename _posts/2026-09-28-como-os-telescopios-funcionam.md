@@ -2,7 +2,6 @@
 layout: post
 title:  "Como os telescópios funcionam"
 date:   2026-09-28 18:01:00 -0300
-categories: notes
 render_with_liquid: false
 ---
 
